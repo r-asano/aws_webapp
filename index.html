@@ -29,7 +29,7 @@
             // add content type header to object
             myHeaders.append("Content-Type", "application/json");
             // using built in JSON utility package turn object to string and store in a variable
-            var raw = JSON.stringify({"firstName":firstName,"lastName":lastName});
+            var raw2 = JSON.stringify({"firstName":firstName,"lastName":lastName});
             // create a JSON object with parameters for API call and store in a variable
             var requestOptions = {
                 method: 'POST',
@@ -41,6 +41,7 @@
             fetch("https://6buhc5qf7j.execute-api.ap-northeast-1.amazonaws.com/dev", requestOptions)
             .then(response => response.text())
             .then(result => alert(JSON.parse(result).body))
+            .then(result => alert(JSON.parse(result).LatestGreetingTime))
             .catch(error => console.log('error', error));
         }
     </script>
